@@ -16,9 +16,9 @@ const Head = () => {
                 </Header.Logo>
                 
                 <Header.NavBtns>
-                    <Header.NavBtn>Главная</Header.NavBtn>
-                    <Header.NavBtn>Статистика</Header.NavBtn>
-                    <Header.NavBtn>Планирование</Header.NavBtn>
+                    <Header.NavBtn background="#910dd4">Главная</Header.NavBtn>
+                    <Header.NavBtn background="#9d32d3">Статистика</Header.NavBtn>
+                    <Header.NavBtn background="#a656cd">Планирование</Header.NavBtn>
                 </Header.NavBtns>
             </HeaderWrapper>
            </Container>

@@ -28,7 +28,7 @@ const css = {
             gap: 15px;
         `,
         NavBtn: styled.button `
-            background: #910dd4;
+            background: ${props => props.background};
             border-radius: 10px;
             border: 1px solid #fff;
             padding: 15px;
@@ -39,6 +39,7 @@ const css = {
             transition: all .3s ease;
             &:hover {
                 transform: scale(0.9);
+                opacity: 0.7;
             }
         `
     },
@@ -62,7 +63,28 @@ const css = {
         text-align: center;
         
     `,
-    
+    ButtonElement: styled.button `
+        all: unset;
+        box-sizing: border-box;
+        display: block;
+        margin: 0 auto;
+        margin-top: 30px;
+        transition: all .3s ease;
+        padding: 20px;
+        background-color: ${props => props.backgroundColor};
+        border: 1px solid #fff;
+        cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+        color: #fff;
+        text-transform: uppercase;
+        border-radius: 10px;
+        width: 100%;
+        text-align: center;
+        &:hover {
+            transform: scale(0.90);
+        }
+    `,
+
 }
 
 export default css

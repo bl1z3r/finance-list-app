@@ -2,12 +2,16 @@ import css from '../../styles/styles.css'
 
 const {Input} = css
 
-const InputComponent = () => {
+
+const InputComponent = (params) => {
+
+    const { placeholder, maxLength } = params
+
     return (
         <Input
         type={"text"}
-        placeholder={"Введите сумму транзакции"}
-        maxLength={100}
+        placeholder={placeholder}
+        maxLength={maxLength}
         />
     )
 }

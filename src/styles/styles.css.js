@@ -28,17 +28,40 @@ const css = {
             gap: 15px;
         `,
         NavBtn: styled.button `
-            background: #000;
+            background: #910dd4;
             border-radius: 10px;
+            border: 1px solid #fff;
             padding: 15px;
             transition: all .3s ease;
             color: #fff;
             font-size: 20px;
             cursor: pointer;
             transition: all .3s ease;
+            &:hover {
+                transform: scale(0.9);
+            }
         `
     },
-    
+    FormContainer: styled.div `
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        max-width: 400px;
+        width: 100%;
+    `,
+    Input: styled.input `
+        all: unset;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px;
+        display: block;
+        margin: 10px auto 0 auto;
+        border: 1px solid #66c66c;
+        border-radius: 10px;
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+        
+    `,
     
 }
 

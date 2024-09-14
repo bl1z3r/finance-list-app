@@ -4,11 +4,10 @@ import css from '../../styles/styles.css'
 
 const { ButtonElement } = css
 
-const Button = () => {
+const Button = (params) => {
   return (
-    <React.Fragment>
-        <ButtonElement>Отправить</ButtonElement>
-    </React.Fragment>
+        <ButtonElement>Сохранить транзакцию
+        </ButtonElement>
   )
 }
 

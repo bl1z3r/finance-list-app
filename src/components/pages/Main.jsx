@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import css from "../../styles/styles.css"
 
-import Head from "../views/global/Head";
 import InputComponent from "../comps/Input";
 const { FormContainer, ButtonElement } = css
 
-const params = {
+const paramsInput = {
     placeholderOne: "Введите сумму транзакции", 
     placeholderTwo: "Введите тип транзакции",
     placeholderThree: "Введите комментарий",
@@ -13,18 +12,42 @@ const params = {
 }
 
 
+
+
 const Main = () => {
 
-    const {placeholderOne, placeholderTwo, placeholderThree, maxLengthUniversal} = params
+    const [ summa, setSumma ] = useState("");
+    const [ typeValue, setTypeValue ] = useState("");
+    const [ comment, setComment ] = useState("");
+
+    const {placeholderOne, placeholderTwo, placeholderThree, maxLengthUniversal } = paramsInput
+
+    const buttonValueChecker = summa.length < 4 || typeValue.length < 4;
+
+    function inputCleaner() {
+        setSumma('')
+        setTypeValue('');
+        setComment('');
+    }
 
     return (
        <React.Fragment>
-         <Head></Head>
         <FormContainer>
-            <InputComponent placeholder={placeholderOne} maxLength={maxLengthUniversal} />
-            <InputComponent placeholder={placeholderTwo} maxLength={maxLengthUniversal} />
-            <InputComponent placeholder={placeholderThree} maxLength={maxLengthUniversal} />
-            <ButtonElement backgroundColor={"#000"}>Отправить</ButtonElement>
+            <InputComponent inputValue={summa} action={setSumma} placeholder={placeholderOne} maxLength={maxLengthUniversal} />
+            <InputComponent inputValue={typeValue} action={setTypeValue} placeholder={placeholderTwo} maxLength={maxLengthUniversal} />
+            <InputComponent inputValue={comment} action={setComment} placeholder={placeholderThree} maxLength={maxLengthUniversal} />
+            <ButtonElement
+                disabled={buttonValueChecker}
+                backgroundcolor={
+                    buttonValueChecker ?
+                    "#a09c9c" :
+                    "#41ba23"
+                }
+                onClick={inputCleaner}
+                >
+                    
+                Сохранить транзацию
+            </ButtonElement>
         </FormContainer>
        </React.Fragment>
     )

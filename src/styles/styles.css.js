@@ -71,7 +71,7 @@ const css = {
         margin-top: 30px;
         transition: all .3s ease;
         padding: 20px;
-        background-color: ${props => props.backgroundColor};
+        background-color: ${props => props.backgroundcolor};
         border: 1px solid #fff;
         cursor: pointer;
         font-family: 'Roboto', sans-serif;
@@ -80,8 +80,13 @@ const css = {
         border-radius: 10px;
         width: 100%;
         text-align: center;
+        user-select: none;
         &:hover {
             transform: scale(0.90);
+        }
+        &:disabled {
+            cursor: default;
+            pointer-events: none;
         }
     `,
 

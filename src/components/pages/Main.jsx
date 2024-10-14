@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import css from "../../styles/styles.css"
 
 import InputComponent from "../comps/Input";
-import DataList from "../views/local/DataList";
 const { FormContainer, ButtonElement } = css
 
 const paramsInput = {
@@ -15,12 +14,13 @@ const paramsInput = {
 
 
 
-const Main = () => {
+const Main = (props) => {
+
+    const { sendData } = props
 
     const [ summa, setSumma ] = useState("");
     const [ typeValue, setTypeValue ] = useState("");
     const [ comment, setComment ] = useState("");
-    const [ data, setData ] = useState([]);
 
     const {
         placeholderOne,
@@ -34,7 +34,7 @@ const Main = () => {
     function inputCleaner() {
 
         const dataLine = `${summa}::${typeValue}::${comment}`
-        setData(
+        sendData(
             prev => [...prev, dataLine]
         )
 
@@ -76,7 +76,6 @@ const Main = () => {
                 Сохранить транзацию
             </ButtonElement>
         </FormContainer>
-        <DataList data={data}/>
        </React.Fragment>
     )
 }

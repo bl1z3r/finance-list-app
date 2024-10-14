@@ -26,6 +26,10 @@ const css = {
             display: flex;
             align-items: center;
             gap: 15px;
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
         `,
         NavBtn: styled.button `
             background: ${props => props.background};
